@@ -2,12 +2,13 @@
 #For more information, please see https://aka.ms/containercompat
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-RUN echo path
-COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
-COPY DockerSample/*.csproj ./DockerSample/
-COPY DockerSample/*.config ./DockerSample/
+RUN echo pwd
+RUN echo $(Build.Repository.LocalPath)
+#COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
+COPY *.csproj ./src/
+COPY src/*.config ./src/
 RUN nuget restore
-COPY DockerSample/. ./DockerSample/
+COPY src/. ./src/
 RUN msbuild /p:Configuration=Release -r:False
 
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019

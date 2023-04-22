@@ -2,7 +2,7 @@
 #For more information, please see https://aka.ms/containercompat
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-RUN echo path
+RUN echo pwd
 RUN echo $(Build.Repository.LocalPath)
 #COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
 COPY *.csproj ./src/

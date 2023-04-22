@@ -2,7 +2,7 @@
 #For more information, please see https://aka.ms/containercompat
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-COPY ["*.sln" "./"]
+COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
 COPY DockerSample/*.csproj ./DockerSample/
 COPY DockerSample/*.config ./DockerSample/
 RUN nuget restore

@@ -3,8 +3,9 @@
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
 RUN echo path
-COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
-COPY src/*.csproj ./src/
+RUN echo $(Build.Repository.LocalPath)
+#COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
+COPY *.csproj ./src/
 COPY src/*.config ./src/
 RUN nuget restore
 COPY src/. ./src/

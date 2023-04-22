@@ -3,7 +3,7 @@
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
 RUN echo pwd
-RUN echo $(Build.Repository.LocalPath)
+#RUN echo $(Build.Repository.LocalPath)
 #COPY $(Build.Repository.LocalPath)/NerdDinner.sln .
 COPY *.csproj ./src/
 COPY src/*.config ./src/

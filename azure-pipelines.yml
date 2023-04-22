@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '2143b861-5fa3-467a-ba7e-11dfe36cb981'
   imageRepository: 'nerddinner121'
   containerRegistry: 'nerddinner.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/src/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name

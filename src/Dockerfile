@@ -2,7 +2,7 @@
 #For more information, please see https://aka.ms/containercompat
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-COPY *.sln .
+COPY ["*.sln" "./"]
 COPY src/*.csproj ./src/
 COPY src/*.config ./src/
 RUN nuget restore
